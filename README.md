@@ -1,6 +1,9 @@
 # 🎵 Predicting Music Popularity with Machine Learning
 
-This project aims to predict the popularity or genre of music tracks using Support Vector Machines (SVM), implemented from scratch with additional GPU acceleration using CUDA. The work explores the full modeling pipeline — from data processing to training and evaluation — and was accepted for presentation at the IEEE Big Data 2023 Workshop.
+**🏅 Accepted for presentation at the IEEE Big Data 2023 Workshop (poster track)** <br>
+
+This project explores a full machine learning pipeline to predict the popularity or genre of music tracks using Support Vector Machines (SVM). The model was implemented from scratch and further optimized using GPU acceleration with CUDA — covering the entire workflow from data preprocessing to model training and evaluation.
+
 
 ---
 
@@ -57,15 +60,45 @@ To reduce training time on larger datasets, we extended our custom SVM with GPU-
 ---
 
 ## 📈 Evaluation & Results
-We set Linear Regression as benchmark.
 
-| Model         | Accuracy | MSE     | MAE     | MAPE    |
-|---------------|----------|---------|---------|---------|
-| Linear Regression | - | 484.55 | 18.36 | 2.09*10^16%  |
-| scratch SVM   | 0.9912280701754386    | 0.03737  | 0.01868 | 1.86842%  |
+We used Linear Regression as a baseline model for comparison.
 
+| Model             | Accuracy     | MSE      | MAE      | MAPE       |
+|------------------|--------------|----------|----------|------------|
+| Linear Regression| N/A          | 484.55   | 18.36    | 2.09×10¹⁶% |
+| Custom SVM       | 0.9912       | 0.03737  | 0.01868  | 1.86842%   |
 
-Additional metrics were computed using cross-validation and test sets. We also measured wall time for training using the GPU vs CPU to highlight performance gain.
+The custom SVM model achieved near-perfect accuracy and dramatically lower error rates across all regression metrics.
+
+> Additional metrics were computed using cross-validation and test sets.  
+> Training time was also benchmarked using GPU vs CPU to highlight performance improvements.
 
 ---
 
+## 🔬 Future Work
+
+- Extend to multi-class genre classification using one-vs-rest.
+- Explore non-linear SVM kernels and kernel approximation techniques.
+- Integrate anomaly detection for outlier filtering using Isolation Forest or Autoencoder.
+
+---
+
+## 📄 Citation
+
+This work was developed as part of the **CS235 Data Mining** course at **UC Riverside** and accepted for presentation at the **IEEE Big Data 2023 Workshop** (not presented due to funding constraints).
+
+---
+
+## 🙏 Acknowledgements
+
+- [Kaggle: Spotify Dataset (1921–2020)](https://www.kaggle.com/datasets/yamaerenay/spotify-dataset-19212020-160k-tracks)
+- UC Riverside - CS235 Data Mining
+- Numba & CUDA Documentation
+
+---
+
+## 🔗 Author
+
+Annie Yang – [GitHub: @AnnieDoDo](https://github.com/AnnieDoDo)
+
+If you found this helpful or inspiring, feel free to ⭐ star the repo and reach out!
